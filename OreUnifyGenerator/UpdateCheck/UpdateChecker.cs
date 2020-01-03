@@ -29,6 +29,10 @@ namespace OreUnifyGenerator.UpdateCheck
 		{
 			string file = "tmp/versions.json".GetAbsolutePath();
 
+			if (File.Exists(file)) {
+				File.Delete(file);
+			}
+
 			bool succeeded;
 			using (var downloader = new DownloaderWithLogger(new LoggerDummy())) {
 				succeeded = downloader.TryDownload(this.candidate, file);
