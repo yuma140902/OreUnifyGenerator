@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("OreUnifyGenerator Windows Front-End")]
+[assembly: AssemblyProduct("OreUnifyGenerator")]
 [assembly: AssemblyCopyright("© 2019 yuma140902")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]

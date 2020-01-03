@@ -13,7 +13,7 @@ namespace OreUnifyGenerator
 {
 	static class Program
 	{
-		public const string Name = "OreUnifyGenerator Windows Front-End";
+		public const string Name = "OreUnifyGenerator";
 		public const string Version = "0.0.0";
 		public static readonly Initializer Initializer = new Initializer();
 
