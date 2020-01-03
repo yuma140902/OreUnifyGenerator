@@ -14,12 +14,13 @@ namespace OreUnifyGenerator.View
 		public AboutBox()
 		{
 			InitializeComponent();
-			this.Text = String.Format("{0} のバージョン情報", AssemblyTitle);
+			this.Text = string.Format("{0} のバージョン情報", AssemblyTitle);
 			this.labelProductName.Text = AssemblyProduct;
-			this.labelVersion.Text = String.Format("バージョン {0}", AssemblyVersion);
+			this.labelVersion.Text = string.Format("バージョン {0}", AssemblyVersion);
 			this.labelCopyright.Text = AssemblyCopyright;
 			this.labelCompanyName.Text = AssemblyCompany;
-			this.textBoxDescription.Text = AssemblyDescription;
+			this.descriptionBox.Clear();
+			this.descriptionBox.AppendText(AssemblyDescription);
 		}
 
 		#region アセンブリ属性アクセサー
@@ -28,7 +29,7 @@ namespace OreUnifyGenerator.View
 			get {
 				object[] attributes = Assembly.GetExecutingAssembly().GetCustomAttributes(typeof(AssemblyTitleAttribute), false);
 				if (attributes.Length > 0) {
-					AssemblyTitleAttribute titleAttribute = (AssemblyTitleAttribute)attributes[0];
+					var titleAttribute = (AssemblyTitleAttribute)attributes[0];
 					if (titleAttribute.Title != "") {
 						return titleAttribute.Title;
 					}
