@@ -1,0 +1,69 @@
+{
+  "blocks": {
+    "bronze": "ic2/textures/blocks/blockMetalBronze",
+    "copper": "ic2/textures/blocks/blockMetalCopper",
+    "lead": "ic2/textures/blocks/blockMetalLead",
+    "silver": "thermalfoundation/textures/blocks/storage/Block_Silver",
+    "steel": "ic2/textures/blocks/blockMetalAdvIron",
+    "tin": "ic2/textures/blocks/blockMetalTin",
+    "uranium": "ic2/textures/blocks/blockMetalUranium",
+    "aluminum": "tinker/textures/blocks/compressed_aluminum"
+  },
+  "ores": {
+    "copper": "ic2/textures/blocks/blockOreCopper",
+    "lead": "ic2/textures/blocks/blockOreLead",
+    "tin": "ic2/textures/blocks/blockOreTin",
+    "uran": "ic2/textures/blocks/blockOreUran",
+    "nickel": "thermalfoundation/textures/blocks/ore/Ore_Nickel",
+    "silver": "thermalfoundation/textures/blocks/ore/Ore_Silver"
+  },
+  "dusts": {
+    "bronze": "ic2/textures/items/resources/itemDustBronze",
+    "coal": "ic2/textures/items/resources/itemDustCoal",
+    "copper": "ic2/textures/items/resources/itemDustCopper",
+    "diamond": "ic2/textures/items/resources/itemDustdiamond",
+    "gold": "ic2/textures/items/resources/itemDustGold",
+    "iron": "ic2/textures/items/resources/itemDustIron",
+    "lapis": "ic2/textures/items/resources/itemDustLapi",
+    "lead": "ic2/textures/items/resources/itemDustLead",
+    "lithium": "ic2/textures/items/resources/itemDustLithium",
+    "obsidian": "ic2/textures/items/resources/itemDustObsidian",
+    "silver": "ic2/textures/items/resources/itemDustSilver",
+    "sulfur": "ic2/textures/items/resources/itemDustSulfur",
+    "tin": "ic2/textures/items/resources/itemDustTin",
+    "nickel": "thermalfoundation/textures/items/material/DustNickel",
+    "aluminum": "tinker/textures/items/materials/material_aluminum_dust"
+  },
+  "ingots": {
+    "bronze": "ic2/textures/items/resources/itemIngotBronze",
+    "copper": "ic2/textures/items/resources/itemIngotCopper",
+    "lead": "ic2/textures/items/resources/itemIngotLead",
+    "silver": "ic2/textures/items/resources/itemIngotSilver",
+    "steel": "ic2/textures/items/resources/itemIngotAdvIron",
+    "tin": "ic2/textures/items/resources/itemIngotTin",
+    "nickel": "thermalfoundation/textures/items/material/IngotNickel",
+    "aluminum": "tinker/textures/items/materials/material_aluminumingot"
+  },
+  "gears": {
+    "wood": "buildcraftcore/textures/items/woodenGearItem",
+    "stone": "buildcraftcore/textures/items/stoneGearItem",
+    "iron": "buildcraftcore/textures/items/ironGearItem",
+    "gold": "buildcraftcore/textures/items/goldGearItem",
+    "diamond": "buildcraftcore/textures/items/diamondGearItem",
+    "lead": "thermalfoundation/textures/items/material/GearLead",
+    "silver": "thermalfoundation/textures/items/material/GearSilver",
+    "bronze": "forestry/textures/items/gearBronze",
+    "copper": "forestry/textures/items/gearCopper",
+    "tin": "forestry/textures/items/gearTin"
+  },
+  "nuggets": {
+    "bronze": "thermalfoundation/textures/items/material/NuggetBronze",
+    "copper": "thermalfoundation/textures/items/material/NuggetCopper",
+    "iron": "thermalfoundation/textures/items/material/NuggetIron",
+    "lead": "thermalfoundation/textures/items/material/NuggetLead",
+    "silver": "thermalfoundation/textures/items/material/NuggetSilver",
+    "tin": "thermalfoundation/textures/items/material/NuggetTin",
+    "aluminum": "tinker/textures/items/materials/material_nugget_aluminum",
+    "steel": "tinker/textures/items/materials/material_nugget_steel"
+  }
+}
