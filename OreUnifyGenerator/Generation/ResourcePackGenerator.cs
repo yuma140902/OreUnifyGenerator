@@ -29,8 +29,8 @@ namespace OreUnifyGenerator.Generation
 		{
 			foreach(var entry in setting.Enumerate(mod)) {
 				string src = textureProvider.GetTexturePathToOpen(entry.Category, entry.Feature);
-				string dest = Path.Combine(respackPath, entry.TexturePath + ".png");
-				// この辺にロガーを入れたい
+				string dest = Path.Combine(respackPath, "assets", entry.TexturePath + ".png");
+				// TODO: この辺にロガーを入れたい
 				FileUtil.CopyOverwrite(src, dest);
 			}
 		}
