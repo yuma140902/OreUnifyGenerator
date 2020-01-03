@@ -129,6 +129,8 @@ namespace OreUnifyGenerator
 
 			var generator = new ResourcePackGenerator(this.texturesViewData.Provider, setting);
 			generator.generate(outputDirectoryBox.Text, modList);
+
+			MessageBox.Show("完了しました", "完了");
 		}
 
 		private void exitMenuItem_Click(object sender, EventArgs e)
