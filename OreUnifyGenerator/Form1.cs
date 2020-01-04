@@ -12,8 +12,6 @@ using System.Windows.Forms;
 using OreUnifyGenerator.Util;
 using OreUnifyGenerator.View;
 using OreUnifyGenerator.Model.ViewData;
-using Microsoft.WindowsAPICodePack.Dialogs;
-using Microsoft.WindowsAPICodePack.Shell;
 using OreUnifyGenerator.Model.Texture;
 using OreUnifyGenerator.Generation;
 using OreUnifyGenerator.Model.ModSetting;
@@ -26,8 +24,7 @@ namespace OreUnifyGenerator
 {
 	public partial class Form1 : Form
 	{
-
-		private readonly CommonOpenFileDialog outputDirectoryDialog;
+		private static readonly string outputDirectory = "Output".GetAbsolutePath();
 
 		private ViewDataDataFiles dataFilesViewData = new ViewDataDataFiles();
 		private ViewDataSupportMods supportModsViewData = new ViewDataSupportMods();
@@ -38,20 +35,6 @@ namespace OreUnifyGenerator
 			InitializeComponent();
 
 			targetMcVersionBox.SelectedIndex = 0;
-
-			this.outputDirectoryDialog = new CommonOpenFileDialog("出力先を選択...");
-			this.outputDirectoryDialog.IsFolderPicker = true;
-
-			string appdata = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData);
-			string respackDir = Path.Combine(appdata, @".minecraft\resourcepacks");
-			if (Directory.Exists(respackDir)) {
-				this.outputDirectoryDialog.AddPlace(respackDir, FileDialogAddPlaceLocation.Top);
-				this.outputDirectoryDialog.DefaultDirectory = respackDir;
-			}
-
-			if (Directory.Exists(respackDir)) {
-				this.outputDirectoryBox.Text = respackDir;
-			}
 
 			foreach (string datafile in Directory.EnumerateFiles(Program.Initializer.DefaultDataDirPath)) {
 				this.dataFilesViewData.AddDataFile(datafile);
@@ -70,14 +53,6 @@ namespace OreUnifyGenerator
 				new TextureOperatorFileSystem(new TextureRegistry(), Program.TextureProvider));
 
 			this.texturesLabel.Text = this.texturesViewData.asOneLineString();
-		}
-
-		private void outputDirectoryReferenceBtn_Click(object sender, EventArgs e)
-		{
-			var result = this.outputDirectoryDialog.ShowDialog();
-			if (result == CommonFileDialogResult.Ok) {
-				outputDirectoryBox.Text = outputDirectoryDialog.FileName;
-			}
 		}
 
 		private void editDataFilesBtn_Click(object sender, EventArgs e)
@@ -128,7 +103,7 @@ namespace OreUnifyGenerator
 			var modList = this.supportModsViewData.ModStates.Where(pair => pair.Value).Select(pair => pair.Key).ToList();
 
 			var generator = new ResourcePackGenerator(this.texturesViewData.Provider, setting);
-			generator.generate(outputDirectoryBox.Text, modList);
+			generator.generate(outputDirectory, modList);
 
 			MessageBox.Show("完了しました", "完了");
 		}
