@@ -6,6 +6,7 @@ using System;
 using System.Collections.Generic;
 using System.Drawing.Imaging;
 using System.IO;
+using System.IO.Compression;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -58,6 +59,12 @@ namespace OreUnifyGenerator.Generation
 			Resources.respack_icon.Save(packIcon, ImageFormat.Png);
 		}
 
+		private void compress(string respackPath)
+		{
+			string respackZip = Path.Combine(Path.GetDirectoryName(respackPath), ResourcePackName + ".zip");
+			ZipFile.CreateFromDirectory(respackPath, respackZip);
+		}
+
 		public void generate(string outputPath, IEnumerable<string> supportMods)
 		{
 			string respackPath = Path.Combine(outputPath, ResourcePackName);
@@ -65,6 +72,8 @@ namespace OreUnifyGenerator.Generation
 
 			organizeModsTextures(respackPath, supportMods);
 			generatePackMeta(respackPath);
+			compress(respackPath);
+			DirectoryUtil.DeleteRecursive(respackPath);
 		}
 	}
 }
